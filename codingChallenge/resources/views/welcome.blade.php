@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Product</title> 
-        <link href="{{asset('css/app.css')}}" ref="stylesheet"  />
+        <link href="{{asset('css/app.css')}}" rel="stylesheet"  />
 
         <script type="module" src="{{asset('js/app.js')}}" defer></script>
     </head>

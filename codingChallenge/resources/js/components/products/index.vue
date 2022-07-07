@@ -1,3 +1,17 @@
+<script setup>
+ import axios from "axios";
+import { onMounted, ref } from "vue"
+
+ onMounted(async() =>{
+     getProducts()
+ })
+
+const getProducts = async () => {
+    let response = await axios.get("/api/get_all_product")
+    console.log('products', response)
+}
+
+</script>
 <template>
 <div class="container">
     <div class="products__list table  my-3">
