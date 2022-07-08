@@ -3,6 +3,8 @@ import { createRouter, createWebHistory } from "vue-router";
 
 import productIndex from '../components/products/index.vue'
 
+import productNew from '../components/products/new.vue'
+
 import notFound from '../components/notFound.vue'
 
 const routes = [
@@ -10,6 +12,10 @@ const routes = [
     {
         path:'/',
         component: productIndex
+    },
+    {
+        path:'/product/new',
+        component: productNew
     },
     {
         path:'/:pathMatch(.*)*',
