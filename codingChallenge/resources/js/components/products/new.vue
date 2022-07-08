@@ -1,3 +1,6 @@
+<script setup>
+</script>
+
 <template>
  <div class="container">
          <div class="products__create ">
