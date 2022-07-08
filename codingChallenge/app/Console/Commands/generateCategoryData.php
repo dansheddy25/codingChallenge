@@ -6,14 +6,14 @@ use Illuminate\Console\Command;
 use App\Models\Product;
 use App\Models\Category;
 
-class generateProductData extends Command
+class generateCategoryData extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'create:new-product {name} {description} {price} {image}  {category_id}';
+    protected $signature = 'create:new-category {name} {parent_category} ';
 
     /**
      * The console command description.
@@ -39,17 +39,9 @@ class generateProductData extends Command
      */
     public function handle()
     {
-        $product = new Product;
-        $product->name = $this->argument('name');
-        $product->description = $this->argument('description');
-        $product->price = $this->argument('price');
-        $product->image = $this->argument('image');
-
-        $product->save();      
-        $cat_ids= explode(",",$this->argument('category_id'));
-        $category = Category::find($cat_ids);
-        $product->categories()->attach($category);
-
-        return 'Success';
+        $category = new Category;
+        $category->name = $this->argument('name');
+        $category->parent_category = $this->argument('parent_category');
+        $category->save();         
     }
 }

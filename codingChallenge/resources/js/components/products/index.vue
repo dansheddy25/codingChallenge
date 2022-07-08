@@ -20,6 +20,7 @@ const newProduct = () => {
 const getProducts = async () => {
     let response = await axios.get("/api/get_all_product")
     products.value = response.data.products
+    console.log(response.data.products)
   
 }
 
@@ -49,11 +50,10 @@ const ourImage = (img) => {
             <p class="table--heading--col2">
                 Product
             </p>
-            <p class="table--heading--col4">Type</p>
-            <p class="table--heading--col3">
-                Inventory
+            <p class="table--heading--col3">Description</p>
+            <p class="table--heading--col4">
+                Price
             </p>
-            <!-- <p class="table--heading--col5">&#32;</p> -->
             <p class="table--heading--col5">actions</p>
         </div>
 
@@ -65,11 +65,11 @@ const ourImage = (img) => {
             <p  class="table--items--col2">
                 {{ item.name }}
             </p>
-            <p class="table--items--col2">
-                {{ item.type }}
-            </p>
             <p class="table--items--col3">
-                {{ item.quantity }}
+                {{ item.description }} 
+            </p>
+            <p class="table--items--col4">
+                {{ item.price }}
             </p>     
             <div>     
                 <button class="btn-icon btn-icon-success" >
