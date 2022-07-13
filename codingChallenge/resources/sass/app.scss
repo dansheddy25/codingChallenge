@@ -1,6 +1,7 @@
 //fonts
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css");
 @import url(http://fonts.googleapis.com/icon?family=Material+Icons);
+@import url(https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css);
 
 
 * {
@@ -12,7 +13,7 @@
 
 body {
     
-    background: #4d4c5c;
+    // background: #4d4c5c;
     color:#FFF;
 }
 
@@ -353,4 +354,19 @@ main h1 ~ p {
     opacity: 0;
     width: 100%;
     cursor: pointer;
+}
+
+
+
+table.dataTable thead .sorting:after,
+table.dataTable thead .sorting:before,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_asc:before,
+table.dataTable thead .sorting_asc_disabled:after,
+table.dataTable thead .sorting_asc_disabled:before,
+table.dataTable thead .sorting_desc:after,
+table.dataTable thead .sorting_desc:before,
+table.dataTable thead .sorting_desc_disabled:after,
+table.dataTable thead .sorting_desc_disabled:before {
+  bottom: .5em;
 }

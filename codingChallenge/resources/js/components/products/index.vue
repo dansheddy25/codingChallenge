@@ -1,8 +1,7 @@
 <script setup>
- import axios from "axios";
+import axios from "axios";
 import { onMounted, ref } from "vue"
 import { useRouter } from "vue-router"
-// import router from "../../router";
 
 const router = useRouter()
 
@@ -20,15 +19,13 @@ const newProduct = () => {
 const getProducts = async () => {
     let response = await axios.get("/api/get_all_product")
     products.value = response.data.products
-    console.log(response.data.products)
-  
 }
 
 const ourImage = (img) => {
     return "/upload/"+img
 }
-
 </script>
+
 <template>
 <div class="container">
     <div class="products__list table  my-3">
@@ -36,11 +33,6 @@ const ourImage = (img) => {
         <div class="customers__titlebar dflex justify-content-between align-items-center">
             <div class="customers__titlebar--item">
                 <h1 class="my-1">Products</h1>
-            </div>
-            <div class="customers__titlebar--item">
-                <button class="btn btn-secondary my-1" @click="newProduct">
-                    Add Product
-                </button>
             </div>
         </div>
 
@@ -54,7 +46,6 @@ const ourImage = (img) => {
             <p class="table--heading--col4">
                 Price
             </p>
-            <p class="table--heading--col5">actions</p>
         </div>
 
         
@@ -71,14 +62,7 @@ const ourImage = (img) => {
             <p class="table--items--col4">
                 {{ item.price }}
             </p>     
-            <div>     
-                <button class="btn-icon btn-icon-success" >
-                    <i class="fas fa-pencil-alt"></i>
-                </button>
-                <button class="btn-icon btn-icon-danger" >
-                    <i class="far fa-trash-alt"></i>
-                </button>
-            </div>
+            
         </div>
         <div class="table--items products__list__item" v-else>
         <p>Product not found</p>

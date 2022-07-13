@@ -7,6 +7,7 @@
         <title>Product</title> 
         <link href="{{asset('css/app.css')}}" rel="stylesheet"  />
 
+         <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
         <script type="module" src="{{asset('js/app.js')}}" defer></script>
     </head>
     <body >
